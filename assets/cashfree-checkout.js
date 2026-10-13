@@ -28,7 +28,7 @@
     const card = document.createElement('section'); card.className='database-payment';
     card.innerHTML=`<header class="dp-header"><button class="dp-back" aria-label="Back to address">‹</button><span>PAYMENT</span></header>
       <div class="dp-steps"><div class="complete"><i>✓</i>Cart</div><div class="complete"><i>✓</i>Address</div><div class="current"><i>3</i>Payment</div><div><i>4</i>Summary</div></div>
-      <div class="dp-methods"><div class="dp-title"><h2>Select Payment Method</h2><span class="dp-safe">🛡 100% SAFE<br>PAYMENTS</span></div><div class="dp-offer"><span class="dp-paytm">paytm</span><strong>Pay online with UPI</strong></div><div class="dp-divider">PAY ONLINE</div><div class="dp-upi-heading"><span>▣</span> UPI(GPay/PhonePe/Paytm)<span class="dp-chevron">⌄</span></div><div id="payment-methods"></div></div>
+      <div class="dp-methods"><div class="dp-title"><h2>Select Payment Method</h2><span class="dp-safe"><img src="/assets/payment-icons/shield.svg" alt="">SECURE<br>PAYMENT</span></div><div class="dp-offer"><div><span class="dp-eyebrow">QUICK &amp; CONVENIENT</span><strong>Pay your way.</strong><p>Choose your favourite UPI app or scan a QR.</p></div><img src="/assets/payment-icons/upi.svg" alt="UPI"></div><div class="dp-divider">PAY ONLINE</div><div class="dp-upi-heading">Choose a payment method<span class="dp-chevron">UPI</span></div><div id="payment-methods"></div></div>
       <div class="dp-prices" id="price-details"><div>Shipping:<strong>FREE</strong></div><div>Total Product Price:<strong data-payment-amount>—</strong></div><div class="dp-total">Order Total:<strong data-payment-amount>—</strong></div></div>
       <div class="dp-status"><p id="payment-status" role="status">Preparing your payment…</p><button id="retry-payment" hidden>Retry</button></div>
       <div class="dp-bottom"><div><strong data-payment-amount>—</strong><button class="dp-view">VIEW PRICE DETAILS</button></div><button class="dp-pay" disabled>PayNow</button></div>
@@ -62,9 +62,9 @@
         const radio=document.createElement('input'); radio.type='radio'; radio.name='payment-method'; radio.value=flag;
         if(!methods.children.length) { radio.checked=true; selected=flag; }
         radio.onchange=()=>selected=flag;
-        const title=document.createElement('span'); title.textContent=label;
-        const badge=document.createElement('span'); badge.className=`dp-icon dp-icon-${iconClass}`; badge.textContent=icon;
-        row.append(radio,title,badge); methods.appendChild(row);
+        const title=document.createElement('span'); title.className='dp-method-copy'; const name=document.createElement('strong'); name.textContent=label; const subtitle=document.createElement('small'); subtitle.textContent=flag==='qr'?'Scan with any UPI app':flag==='Bhim'?'Pay using any UPI app':'Fast payment with your UPI account'; title.append(name,subtitle);
+        const badge=document.createElement('span'); badge.className='dp-icon'; const logo=document.createElement('img'); logo.src=`/assets/payment-icons/${iconClass==='bhim'?'upi':iconClass}.svg`; logo.alt=label; badge.appendChild(logo);
+        row.append(radio,badge,title); methods.appendChild(row);
 
       }
       const payButton=card.querySelector('.dp-pay'); payButton.disabled=false;
@@ -92,7 +92,7 @@
 
     } catch(e) { card.querySelector('#payment-status').textContent=e.message; card.querySelector('#retry-payment').hidden=false; }
   }
-  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=11'; document.head.appendChild(style);
+  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=12'; document.head.appendChild(style);
   new MutationObserver(mount).observe(document.documentElement,{childList:true,subtree:true});
   addEventListener('focus',verify); mount();
 })();
