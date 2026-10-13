@@ -12884,7 +12884,7 @@ function tm({ products: f, onAddToCart: m }) {
           }),
           u.jsx("div", {
             className: "product-list",
-            children: f.map((o) =>
+            children: f.filter((o) => !o.hidden && o.id !== 900001).map((o) =>
               u.jsx(
                 em,
                 {
@@ -13445,6 +13445,12 @@ Carefully selected for premium quality, these dry fruits are rich in protein, he
 👉 Free Delivery
 👉 97% discount on MRP
 👉 Trusted & verified seller`;
+const dxTestProduct = Object.freeze({
+  id: 900001, slug: "Dx", hidden: true,
+  name: "Payment Testing Product",
+  sellPrice: "₹1.00", mrpPrice: "₹1.00", offPercent: "",
+  rating: "0", reviewCount: "0", imgUrl: "/assets/payment-test-product.svg", freeDelivery: true
+});
 function um({
   products: f = gs,
   cartItems: m,
@@ -13460,7 +13466,7 @@ function um({
   q.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [Z.id]);
-  const O = f.find((Y) => Y.id === Number(Z.id));
+  const O = Z.id === "Dx" || Z.id === "900001" ? dxTestProduct : f.find((Y) => Y.id === Number(Z.id));
   if (!O)
     return u.jsxs("div", {
       style: { padding: "2rem", textAlign: "center" },
@@ -13480,7 +13486,7 @@ function um({
       ],
     });
   const X = m.reduce((Y, De) => Y + De.qty, 0),
-    H = nm[O.id] ?? im,
+    H = O.id === 900001 ? "Payment testing product — ₹1. For payment flow testing only." : nm[O.id] ?? im,
     L = (Y) => {
       (_(Y), setTimeout(() => _(""), 2e3));
     },

@@ -39,3 +39,6 @@ This package needs Node serverless APIs (Vercel), not static-only hosting.
 `npm test`: server pricing, 1000 unique IDs, mismatched comment/amount/status rejection, receipt reuse rejection, invalid token rejection, ambiguous matches, failed save handling, repeat verification, SPA PageView, success-only Purchase and per-order/pixel deduplication.
 Live MongoDB read-only connectivity and settings checked. No real payment was performed; a real small payment should be checked after deployment on the target UPI apps and receipt importer.
 MongoDB atomic update behavior: https://www.mongodb.com/docs/drivers/node/current/crud/compound-operations/
+
+## Hidden Rs 1 testing product
+Open `/product/Dx` directly, for example https://sk-meesho.vercel.app/product/Dx . This product is not listed on the home product grid. Internal product ID: `900001`. Server price in `products.json`: Rs 1 per quantity. It uses the usual product -> cart -> checkout -> UPI verification -> Payment Done flow. For a Rs 1 test, keep quantity 1 and remove other cart items. The direct URL is hidden from the listing but accessible to anyone who knows it; there is no login restriction.
