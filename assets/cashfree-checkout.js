@@ -16,7 +16,7 @@
         location.assign(`/success.html?order_id=${encodeURIComponent(active.orderId)}`);
       } else { if (status) status.textContent = result.message; if(modalStatus) modalStatus.textContent=result.message; }
     } catch(e) { const status = document.getElementById('payment-status');
-      const modalStatus=document.getElementById('modal-payment-status'); if(status) status.textContent=e.message; }
+      const modalStatus=document.getElementById('modal-payment-status'); if(status) status.textContent=e.message; if(modalStatus) modalStatus.textContent=e.message; }
     finally { checking=false; }
   }
   async function mount() {
@@ -75,7 +75,7 @@
         modalStatus.textContent='Checking payment…';
         let attempts=0;
         initialCheck=setTimeout(verify,3000);
-        timer=setInterval(()=>{ if(++attempts>12) { clearInterval(timer); modalStatus.textContent='Please check payment status manually.'; return; } verify(); },5000);
+        timer=setInterval(()=>{ if(++attempts>120) { clearInterval(timer); modalStatus.textContent='Receipt is still pending. Check status again; do not pay twice.'; return; } verify(); },5000);
       }
       payButton.onclick=()=>{
         const qr=selected==='qr' || selected==='Bhim';
@@ -83,7 +83,7 @@
         openApp.hidden=qr;
         if(!qr) { openApp.href=links[selected]; openApp.textContent=`Open ${selected==='Phonepe'?'PhonePe':selected==='Gpay'?'Google Pay':'Paytm'}`; }
         card.querySelector('dialog').showModal();
-        clearTimeout(initialCheck); initialCheck=setTimeout(startVerification,3000);
+        startVerification();
         if(!qr) location.assign(links[selected]);
       };
       const copy=document.createElement('button'); copy.textContent='Copy Order ID'; copy.onclick=async()=>{ try { await navigator.clipboard.writeText(order.orderId); copy.textContent='Copied'; } catch { copy.textContent='Copy the Order ID shown above'; } }; details.appendChild(copy);
@@ -92,7 +92,7 @@
 
     } catch(e) { card.querySelector('#payment-status').textContent=e.message; card.querySelector('#retry-payment').hidden=false; }
   }
-  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=10'; document.head.appendChild(style);
+  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=11'; document.head.appendChild(style);
   new MutationObserver(mount).observe(document.documentElement,{childList:true,subtree:true});
   addEventListener('focus',verify); mount();
 })();
