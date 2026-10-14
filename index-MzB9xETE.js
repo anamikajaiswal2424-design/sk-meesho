@@ -12909,7 +12909,7 @@ const gs = [
     "mrpPrice": "₹7,889.00",
     "offPercent": "96% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9991",
     "imgUrl": "https://m.media-amazon.com/images/I/616QjhZC-lL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12920,7 +12920,7 @@ const gs = [
     "mrpPrice": "₹6,399.00",
     "offPercent": "93% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7706",
     "imgUrl": "https://m.media-amazon.com/images/I/81Wr7b2O0gL._AC_SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12931,7 +12931,7 @@ const gs = [
     "mrpPrice": "₹1,788.00",
     "offPercent": "86% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8070",
     "imgUrl": "https://m.media-amazon.com/images/I/71J1Tkfe1DL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12942,7 +12942,7 @@ const gs = [
     "mrpPrice": "₹5,999.00",
     "offPercent": "96% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9863",
     "imgUrl": "https://m.media-amazon.com/images/I/81yobRRV8nL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12953,7 +12953,7 @@ const gs = [
     "mrpPrice": "₹4,789.00",
     "offPercent": "91% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7651",
     "imgUrl": "https://m.media-amazon.com/images/I/71tB72jwZlL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12964,7 +12964,7 @@ const gs = [
     "mrpPrice": "₹4,789.00",
     "offPercent": "92% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8747",
     "imgUrl": "https://m.media-amazon.com/images/I/71qaGnOxACL._SX679_.jpg",
     "freeDelivery": true
   },
@@ -12975,7 +12975,7 @@ const gs = [
     "mrpPrice": "₹11,999.00",
     "offPercent": "97% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9658",
     "imgUrl": "https://m.media-amazon.com/images/I/61tLj6CIW-L._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12986,7 +12986,7 @@ const gs = [
     "mrpPrice": "₹4,259.00",
     "offPercent": "93% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7102",
     "imgUrl": "https://m.media-amazon.com/images/I/81-sJRhEapL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -12997,7 +12997,7 @@ const gs = [
     "mrpPrice": "₹2,998.00",
     "offPercent": "88% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9309",
     "imgUrl": "https://m.media-amazon.com/images/I/51ZykaL8q6L._SL1200_.jpg",
     "freeDelivery": true
   },
@@ -13008,7 +13008,7 @@ const gs = [
     "mrpPrice": "₹12,558.00",
     "offPercent": "97% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9967",
     "imgUrl": "https://m.media-amazon.com/images/I/715hVUAu3GL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13019,7 +13019,7 @@ const gs = [
     "mrpPrice": "₹3,558.00",
     "offPercent": "92% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9128",
     "imgUrl": "https://m.media-amazon.com/images/I/61UCHV8cIwL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13030,7 +13030,7 @@ const gs = [
     "mrpPrice": "₹29,980.00",
     "offPercent": "99% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7363",
     "imgUrl": "https://m.media-amazon.com/images/I/8195aYGDl9L._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13041,7 +13041,7 @@ const gs = [
     "mrpPrice": "₹3,588.00",
     "offPercent": "93% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7908",
     "imgUrl": "https://m.media-amazon.com/images/I/51gttFr+5EL._SL1200_.jpg",
     "freeDelivery": true
   },
@@ -13052,7 +13052,7 @@ const gs = [
     "mrpPrice": "₹5,199.00",
     "offPercent": "94% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7740",
     "imgUrl": "https://m.media-amazon.com/images/I/710IGitkLDL._AC_SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13063,7 +13063,7 @@ const gs = [
     "mrpPrice": "₹3,499.00",
     "offPercent": "92% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9441",
     "imgUrl": "https://m.media-amazon.com/images/I/61CbXtp2rdL._SL1350_.jpg",
     "freeDelivery": true
   },
@@ -13074,7 +13074,7 @@ const gs = [
     "mrpPrice": "₹11,588.00",
     "offPercent": "97% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7897",
     "imgUrl": "https://m.media-amazon.com/images/I/61ZcR8oVtSL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13085,7 +13085,7 @@ const gs = [
     "mrpPrice": "₹5,488.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7245",
     "imgUrl": "https://m.media-amazon.com/images/I/51nsm-fbAOL._SX425_.jpg",
     "freeDelivery": true
   },
@@ -13096,7 +13096,7 @@ const gs = [
     "mrpPrice": "₹6,520.00",
     "offPercent": "96% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7591",
     "imgUrl": "https://m.media-amazon.com/images/I/81uNog-p3vL._AC_SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13107,7 +13107,7 @@ const gs = [
     "mrpPrice": "₹3,699.00",
     "offPercent": "91% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7975",
     "imgUrl": "https://m.media-amazon.com/images/I/61ZSU4OILFL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13118,7 +13118,7 @@ const gs = [
     "mrpPrice": "₹4,155.00",
     "offPercent": "93% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7180",
     "imgUrl": "https://m.media-amazon.com/images/I/713Kl1I0CyL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13129,7 +13129,7 @@ const gs = [
     "mrpPrice": "₹4,788.00",
     "offPercent": "94% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9103",
     "imgUrl": "https://m.media-amazon.com/images/I/61whl+GwjiL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13140,7 +13140,7 @@ const gs = [
     "mrpPrice": "₹2,789.00",
     "offPercent": "90% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9035",
     "imgUrl": "https://m.media-amazon.com/images/I/61dGwBIwaDL._SY450_.jpg",
     "freeDelivery": true
   },
@@ -13151,7 +13151,7 @@ const gs = [
     "mrpPrice": "₹3,499.00",
     "offPercent": "92% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7428",
     "imgUrl": "https://m.media-amazon.com/images/I/618sHIqH+VL._SL1000_.jpg",
     "freeDelivery": true
   },
@@ -13162,7 +13162,7 @@ const gs = [
     "mrpPrice": "₹3,599.00",
     "offPercent": "89% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7869",
     "imgUrl": "https://m.media-amazon.com/images/I/71RX6d+02hL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13173,7 +13173,7 @@ const gs = [
     "mrpPrice": "₹4,588.00",
     "offPercent": "94% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9912",
     "imgUrl": "https://m.media-amazon.com/images/I/619RCL-ioZL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13184,7 +13184,7 @@ const gs = [
     "mrpPrice": "₹13,650.00",
     "offPercent": "97% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9894",
     "imgUrl": "https://m.media-amazon.com/images/I/71R5lP1aZkL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13195,7 +13195,7 @@ const gs = [
     "mrpPrice": "₹4,399.00",
     "offPercent": "90% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7516",
     "imgUrl": "https://m.media-amazon.com/images/I/81vC9lOQfGL._AC_SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13206,7 +13206,7 @@ const gs = [
     "mrpPrice": "₹3,544.00",
     "offPercent": "90% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7209",
     "imgUrl": "https://m.media-amazon.com/images/I/61cAuha5eyL._SL1100_.jpg",
     "freeDelivery": true
   },
@@ -13217,7 +13217,7 @@ const gs = [
     "mrpPrice": "₹15,899.00",
     "offPercent": "97% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8623",
     "imgUrl": "https://m.media-amazon.com/images/I/51G96nyJlOL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13228,7 +13228,7 @@ const gs = [
     "mrpPrice": "₹2,578.00",
     "offPercent": "89% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8421",
     "imgUrl": "https://m.media-amazon.com/images/I/71oZ1-QYomL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13239,7 +13239,7 @@ const gs = [
     "mrpPrice": "₹3,199.00",
     "offPercent": "90% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9707",
     "imgUrl": "https://m.media-amazon.com/images/I/919+cmD3MsL._AC_SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13250,7 +13250,7 @@ const gs = [
     "mrpPrice": "₹6,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8308",
     "imgUrl": "https://m.media-amazon.com/images/I/81Z7IfN1LZL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13261,7 +13261,7 @@ const gs = [
     "mrpPrice": "₹6,399.00",
     "offPercent": "96% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8984",
     "imgUrl": "https://m.media-amazon.com/images/I/81Cir3akReL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13272,7 +13272,7 @@ const gs = [
     "mrpPrice": "₹1,898.00",
     "offPercent": "84% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8032",
     "imgUrl": "https://m.media-amazon.com/images/I/71nazZbMYmL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13283,7 +13283,7 @@ const gs = [
     "mrpPrice": "₹2,276.00",
     "offPercent": "86% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7309",
     "imgUrl": "https://m.media-amazon.com/images/I/61ydjW0Tb-L._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13294,7 +13294,7 @@ const gs = [
     "mrpPrice": "₹5,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7139",
     "imgUrl": "https://m.media-amazon.com/images/I/31n92OkncZL._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13305,7 +13305,7 @@ const gs = [
     "mrpPrice": "₹2,488.00",
     "offPercent": "92% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8876",
     "imgUrl": "https://m.media-amazon.com/images/I/51a0X1f8FhL._SL1160_.jpg",
     "freeDelivery": true
   },
@@ -13316,7 +13316,7 @@ const gs = [
     "mrpPrice": "₹5,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7065",
     "imgUrl": "https://m.media-amazon.com/images/I/31TYCNqAUhL._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13327,7 +13327,7 @@ const gs = [
     "mrpPrice": "₹2,599.00",
     "offPercent": "92% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9815",
     "imgUrl": "https://m.media-amazon.com/images/I/61626Ya4tJL._SL1100_.jpg",
     "freeDelivery": true
   },
@@ -13338,7 +13338,7 @@ const gs = [
     "mrpPrice": "₹9,999.00",
     "offPercent": "98% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7161",
     "imgUrl": "https://m.media-amazon.com/images/I/314185NtTpL._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13349,7 +13349,7 @@ const gs = [
     "mrpPrice": "₹15,999.00",
     "offPercent": "98% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9828",
     "imgUrl": "https://m.media-amazon.com/images/I/31q4j7mkrEL._SY300_SX300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13360,7 +13360,7 @@ const gs = [
     "mrpPrice": "₹5,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8695",
     "imgUrl": "https://m.media-amazon.com/images/I/41wuqD6LvaL._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13371,7 +13371,7 @@ const gs = [
     "mrpPrice": "₹5,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9889",
     "imgUrl": "https://m.media-amazon.com/images/I/31nEN7B4nvL._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13382,7 +13382,7 @@ const gs = [
     "mrpPrice": "₹5,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7472",
     "imgUrl": "https://m.media-amazon.com/images/I/313l2WDbH8L._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13393,7 +13393,7 @@ const gs = [
     "mrpPrice": "₹7,699.00",
     "offPercent": "96% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "8657",
     "imgUrl": "https://m.media-amazon.com/images/I/51mCAmdG4AL._SL1000_.jpg",
     "freeDelivery": true
   },
@@ -13404,7 +13404,7 @@ const gs = [
     "mrpPrice": "₹9,999.00",
     "offPercent": "97% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7348",
     "imgUrl": "https://m.media-amazon.com/images/I/3164ZBvk+xL._SY300_SX300_.jpg",
     "freeDelivery": true
   },
@@ -13415,7 +13415,7 @@ const gs = [
     "mrpPrice": "₹5,599.00",
     "offPercent": "95% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9573",
     "imgUrl": "https://m.media-amazon.com/images/I/319sllueFbL._SX300_SY300_QL70_FMwebp_.jpg",
     "freeDelivery": true
   },
@@ -13426,7 +13426,7 @@ const gs = [
     "mrpPrice": "₹2,799.00",
     "offPercent": "90% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "7417",
     "imgUrl": "https://m.media-amazon.com/images/I/6116OpnsTYL._SL1500_.jpg",
     "freeDelivery": true
   },
@@ -13437,7 +13437,7 @@ const gs = [
     "mrpPrice": "₹215.00",
     "offPercent": "100% off",
     "rating": "0.0",
-    "reviewCount": "0",
+    "reviewCount": "9053",
     "imgUrl": "/images/products/dx.webp",
     "freeDelivery": true
   }
