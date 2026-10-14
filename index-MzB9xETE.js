@@ -12901,7 +12901,7 @@ function tm({ products: f, onAddToCart: m }) {
     ],
   });
 }
-const gs = [const products = [
+const gs = [
   {
     "id": 1,
     "name": "IBELL High Speed Tower Fan, 25-foot Air Delivery, 4-way Air Flow, Low Power Consumption and Anti-Rus",
@@ -13441,10 +13441,7 @@ const gs = [const products = [
     "imgUrl": "/images/products/dx.webp",
     "freeDelivery": true
   }
-];
-
-export default products;
-
+],
   lm = [
     {
       name: "Rahul Sharma",
