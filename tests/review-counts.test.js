@@ -35,3 +35,23 @@ test('all product review counts are stable and between 6999 and 9999', () => {
     Object.fromEntries(products.map((product) => [product.name, product.reviewCount]));
   assert.deepEqual(toCountMap(bundles[0]), toCountMap(bundles[1]));
 });
+
+test('all product star ratings are stable and between 4.1 and 4.9', () => {
+  const bundles = [
+    readProducts('assets/index-MzB9xETE.js'),
+    readProducts('index-MzB9xETE.js'),
+  ];
+
+  for (const products of bundles) {
+    assert.equal(products.length, 49);
+    for (const product of products) {
+      assert.match(product.rating, /^4\.[1-9]$/, `${product.name}: rating must have one decimal`);
+      const rating = Number(product.rating);
+      assert.ok(rating >= 4.1 && rating <= 4.9, `${product.name}: rating is out of range`);
+    }
+  }
+
+  const toRatingMap = (products) =>
+    Object.fromEntries(products.map((product) => [product.name, product.rating]));
+  assert.deepEqual(toRatingMap(bundles[0]), toRatingMap(bundles[1]));
+});
