@@ -12902,271 +12902,546 @@ function tm({ products: f, onAddToCart: m }) {
   });
 }
 const gs = [
-    {
-      id: 1,
-      name: "Premium 4KG Mix Dry Fruits Combo – Almonds, Cashews, Pistachios & Kishmish (1KG Each)",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.9",
-      reviewCount: "1374",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_mgf77cmgf77cmgf7.png?v=1774764915",
-      freeDelivery: !0,
-    },
-    {
-      id: 2,
-      name: "Essential Grocery Mega Saver Combo – Rice 5KG, Atta 10KG, Sugar 5KG & Soya Oil 5L",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.6",
-      reviewCount: "6476",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_e5duave5duave5du.png?v=1774764917",
-      freeDelivery: !0,
-    },
-    {
-      id: 3,
-      name: "Daily Essentials Mega Saver Combo – Atta 10KG, Basmati Rice 5KG, Sugar 5KG & Soya Oil 5L",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.7",
-      reviewCount: "4802",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_b7k5xsb7k5xsb7k5.png?v=1774764917",
-      freeDelivery: !0,
-    },
-    {
-      id: 4,
-      name: "Rasoi Samagri Special Combo – 20KG Atta, 5KG Sugar, 1KG Besan & 5L Mustard Oil",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.4",
-      reviewCount: "1343",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_j3ynhoj3ynhoj3yn.png?v=1774764914",
-      freeDelivery: !0,
-    },
-    {
-      id: 5,
-      name: "Grocery Essentials Combo – 10KG Rice, 10KG Atta & 5L Kachi Ghani Mustard Oil",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.9",
-      reviewCount: "7961",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_oyjekioyjekioyje.png?v=1774764922",
-      freeDelivery: !0,
-    },
-    {
-      id: 6,
-      name: "5KG Premium Mix Dry Fruits Combo – Almonds, Cashews, Pistachios, Walnuts & Raisins",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.4",
-      reviewCount: "1796",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_9avcrz9avcrz9avc.png?v=1774764871",
-      freeDelivery: !0,
-    },
-    {
-      id: 7,
-      name: "Surf Excel Easy Wash 10KG Pack + FREE Comfort Fabric Conditioner 1L",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.0",
-      reviewCount: "2293",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_jyteb2jyteb2jyte.png?v=1774764921",
-      freeDelivery: !0,
-    },
-    {
-      id: 8,
-      name: "Super Cleaning Combo – Ariel Liquid 6.4L + Tide Powder 8KG + 3x Harpic Toilet Cleaner",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.6",
-      reviewCount: "8307",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_5d5dyu5d5dyu5d5d.png?v=1774764922",
-      freeDelivery: !0,
-    },
-    {
-      id: 9,
-      name: "Super Saver Grocery Combo – Rice 5KG, Atta 10KG, Sugar 5KG & Refined Oil 5L",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.5",
-      reviewCount: "8689",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_7i9cdo7i9cdo7i9c.png?v=1774764921",
-      freeDelivery: !0,
-    },
-    {
-      id: 10,
-      name: "Mega Kitchen Combo – Atta 5KG, Sunflower Oil 5L, Ghee 1L, Salt 1KG & Sugar 1KG",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.4",
-      reviewCount: "3592",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_ax3dasax3dasax3d.png?v=1774764920",
-      freeDelivery: !0,
-    },
-    {
-      id: 11,
-      name: "Limited Time Grocery Combo – Rice 5KG, Atta 5KG, Oil 5L, Salt 1KG & Sugar 1KG",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.0",
-      reviewCount: "6340",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_rhct2trhct2trhct.png?v=1774764919",
-      freeDelivery: !0,
-    },
-    {
-      id: 12,
-      name: "Beverage & Grocery Combo – Tata Tea 1.5KG, Sugar 5KG, Coffee, Green Tea & Masala Tea",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.5",
-      reviewCount: "6085",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_tjjtxctjjtxctjjt.png?v=1774764920",
-      freeDelivery: !0,
-    },
-    {
-      id: 13,
-      name: "Mega Home Care Combo – Ariel 5KG, Washing Liquid, Toilet Cleaner (2x), Soaps & Dove Shampoo 1L",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.6",
-      reviewCount: "8205",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/ChatGPT_Image_Mar_18_2026_09_43_30_PM.png?v=1774764860",
-      freeDelivery: !0,
-    },
-    {
-      id: 14,
-      name: "Double Value Oil Combo – 15L Sunflower Oil + 15L Groundnut Oil (Total 30 Litres)",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.2",
-      reviewCount: "9913",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/ChatGPT_Image_Mar_18_2026_09_46_12_PM.png?v=1774764860",
-      freeDelivery: !0,
-    },
-    {
-      id: 15,
-      name: "Double Nut Combo – 5KG Almonds + 5KG Cashews (Total 10KG Pack)",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.5",
-      reviewCount: "9029",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/ChatGPT_Image_Mar_18_2026_09_47_43_PM.png?v=1774764862",
-      freeDelivery: !0,
-    },
-    {
-      id: 16,
-      name: "Essential Grocery Combo – Besan (5KG), Atta 5KG, Moong Dal 1KG, Oil 1L & Sugar 1KG",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "4.2",
-      reviewCount: "6169",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/ChatGPT_Image_Mar_18_2026_09_49_55_PM.png?v=1774764863",
-      freeDelivery: !0,
-    },
-    {
-      id: 17,
-      name: "Mega Personal Care Combo – Tide 8KG, Head & Shoulders Shampoo 2L, Nivea Soaps & Colgate Pack",
-      sellPrice: "₹199.00",
-      mrpPrice: "₹5,999.00",
-      offPercent: "97% off",
-      rating: "3.8",
-      reviewCount: "4245",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0728/8487/9496/files/ChatGPT_Image_Mar_18_2026_09_52_51_PM.png?v=1774764858",
-      freeDelivery: !0,
-    },
-   {
-      id: 18,
-      name: "Mega Super Saver Family Essentials Kit- 5kg Aashirvaad Ghee, 10kg Fortune Rice, 10kg Surf Excel, 2L Vim Gel, 2L Head & Shoulders Shampoo, and 12-Pack Nivea Soaps.",
-      sellPrice: "₹399.00",
-      mrpPrice: "₹8,999.00",
-      offPercent: "97% off",
-      rating: "3.8",
-      reviewCount: "4898",
-      imgUrl:
-        "https://i.ibb.co/4My96TZ/photo-2026-06-12-23-52-12-5.jpg",
-      freeDelivery: !0,
-    },
   {
-      id: 19,
-      name: "Premium Curated Essentials Combo- 5kg Aashirvaad Atta, 5kg India Gate Rice, 1L Tata Sampann Groundnut Oil, 500g Happilo Almonds, 500g Tata Sampann Kitchen King Masala, and Premium Green Tea",
-      sellPrice: "₹449.00",
-      mrpPrice: "₹9,999.00",
-      offPercent: "97% off",
-      rating: "3.8",
-      reviewCount: "5625",
-      imgUrl:
-        "https://i.ibb.co/Rx79b1f/photo-2026-06-12-23-52-12-4.jpg",
-      freeDelivery: !0,
-    },
+    "id": 1,
+    "name": "IBELL High Speed Tower Fan, 25-foot Air Delivery, 4-way Air Flow, Low Power Consumption and Anti-Rus",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹7,889.00",
+    "offPercent": "96% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/616QjhZC-lL._SL1500_.jpg",
+    "freeDelivery": true
+  },
   {
-      id: 20,
-      name: "Premium Grocery Essentials Combo- 10kg India Gate Poha, 5kg Fortune Besan, 5kg Aashirvaad Sugar, 500g Happilo Dry Fruits, Pack of 3 Everest Spices, and 2 x 500g Dabur Honey",
-      sellPrice: "₹499.00",
-      mrpPrice: "₹10,999.00",
-      offPercent: "97% off",
-      rating: "3.8",
-      reviewCount: "3625",
-      imgUrl:
-        "https://i.ibb.co/s96fnyGm/photo-2026-06-12-23-52-12-3.jpg",
-      freeDelivery: !0,
-    },
+    "id": 2,
+    "name": "Juicer, 600W Juicer Machine with 3.5 Inch W_ide Chute for Whole Fruits, High Yield Juice Extractor wi",
+    "sellPrice": "₹450.00",
+    "mrpPrice": "₹6,399.00",
+    "offPercent": "93% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81Wr7b2O0gL._AC_SL1500_.jpg",
+    "freeDelivery": true
+  },
   {
-      id: 21,
-      name: "Ultimate Platinum Festive Combo Pack- 5kg Premium India Gate Super Basmati Rice, 1kg Organic Quinoa, 200g Deluxe Green Tea, 1L Tata Sampann Groundnut Oil, 2kg Happilo Premium Almonds, and 250g Premium Coffee",
-      sellPrice: "₹599.00",
-      mrpPrice: "₹11,999.00",
-      offPercent: "97% off",
-      rating: "3.8",
-      reviewCount: "6875",
-      imgUrl:
-        "https://i.ibb.co/ycHd4y3L/photo-2026-06-12-23-52-12-2.jpg",
-      freeDelivery: !0,
-    },
+    "id": 3,
+    "name": "MILTON Ernesto Inner Stainless Steel Casserole Set of 3 (420 ml, 850 ml, 1.43 litres), Red | Easy to",
+    "sellPrice": "₹249.00",
+    "mrpPrice": "₹1,788.00",
+    "offPercent": "86% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71J1Tkfe1DL._SL1500_.jpg",
+    "freeDelivery": true
+  },
   {
-      id: 22,
-      name: "Premium Healthy & Radiant Living Combo- 5kg Aashirvaad Atta, 1kg Tata Salt, 1L Dabur Mustard Oil, 1kg Tata Sampann Besan, Organic Matcha Powder, Raw Acacia Honey, Chia Seeds, Cold-Pressed Avocado Oil, Cold-Brew Coffee, Quinoa Grains, Goji Berry Pouch, Ayurvedic Wellness Tea, Premium Medjool Dates, and Superfood Snack Bars",
-      sellPrice: "₹1299.00",
-      mrpPrice: "₹15,999.00",
-      offPercent: "97% off",
-      rating: "3.8",
-      reviewCount: "9835",
-      imgUrl:
-        "https://i.ibb.co/GQ39DLcf/photo-2026-06-12-23-52-12.jpg",
-      freeDelivery: !0,
-    },
-  ],
+    "id": 4,
+    "name": "Cookwell Bullet Mixer Grinder (5 Jar, 3 Blade, Silver)",
+    "sellPrice": "₹247.00",
+    "mrpPrice": "₹5,999.00",
+    "offPercent": "96% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81yobRRV8nL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 5,
+    "name": "LONGWAY Creta P2 1200 mm/48 inch Remote Controlled 3 Blade Anti-Dust Decorative 5-Star Rated Ceiling",
+    "sellPrice": "₹449.00",
+    "mrpPrice": "₹4,789.00",
+    "offPercent": "91% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71tB72jwZlL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 6,
+    "name": "LG 28 L Convection Microwave Oven (MC2846SL, Silver)",
+    "sellPrice": "₹378.00",
+    "mrpPrice": "₹4,789.00",
+    "offPercent": "92% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71qaGnOxACL._SX679_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 7,
+    "name": "Symphony Diet 3D 30i Portable Tower Air Cooler For Home with 3-S_ide Honeycomb Pads i-Pure Technology",
+    "sellPrice": "₹305.00",
+    "mrpPrice": "₹11,999.00",
+    "offPercent": "97% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61tLj6CIW-L._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 8,
+    "name": "Amazon Basics - Non-Stick Cookware Set without Induction Base (Black) 8 Piece",
+    "sellPrice": "₹311.00",
+    "mrpPrice": "₹4,259.00",
+    "offPercent": "93% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81-sJRhEapL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 9,
+    "name": "Prestige Iris Plus 750 W Mixer Grinder With 4 Jars (3 Stainless Steel Jars+ 1 Juicer Jar) 4 Super Ef",
+    "sellPrice": "₹249.00",
+    "mrpPrice": "₹2,998.00",
+    "offPercent": "88% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/51ZykaL8q6L._SL1200_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 10,
+    "name": "HIFRESH Air Cooler for Home, 107CM Tower Cooler w/Smart Remote & LED Touch Screen, 3 Speeds & 4 Mode",
+    "sellPrice": "₹369.00",
+    "mrpPrice": "₹12,558.00",
+    "offPercent": "97% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/715hVUAu3GL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 11,
+    "name": "Havells 1200Mm Stealth Air Bldc Motor Ceiling Fan Most Silent & Premium,5 stars With Rf Remote,100%",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹3,558.00",
+    "offPercent": "92% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61UCHV8cIwL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 12,
+    "name": "LG 108 cm (43 inches) 4K Ultra HD Smart LED TV 43UR7500PSC (Dark Iron Gray)",
+    "sellPrice": "₹449.00",
+    "mrpPrice": "₹29,980.00",
+    "offPercent": "99% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/8195aYGDl9L._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 13,
+    "name": "V-Guard Gatimaan Pro HSP N High Speed Pedestal Fan | 3 Adjustable Fan Speeds | Rust Resistant ABS Bo",
+    "sellPrice": "₹259.00",
+    "mrpPrice": "₹3,588.00",
+    "offPercent": "93% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/51gttFr+5EL._SL1200_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 14,
+    "name": "LINKChef 7 in 1 Immersion Blender Scratch Resistant, 2 Titanium Steel Blades 800W Hand Blender, 20 S",
+    "sellPrice": "₹298.00",
+    "mrpPrice": "₹5,199.00",
+    "offPercent": "94% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/710IGitkLDL._AC_SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 15,
+    "name": "Electric Hand Mixer with Bowls Set, 5-Speeds Handhold Mixers with Egg Whisks Beaters, 6 Stainless St",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹3,499.00",
+    "offPercent": "92% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61CbXtp2rdL._SL1350_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 16,
+    "name": "Havells Electric Kettle Aqua Plus 1500 Watts 1.2 liters , Double Layered Cool Touch Outer Body | 304",
+    "sellPrice": "₹399.00",
+    "mrpPrice": "₹11,588.00",
+    "offPercent": "97% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61ZcR8oVtSL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 17,
+    "name": "Polycab Silencio Mini 900mm 5-Star Advanced BLDC, Remote Ceiling fan for home | High Air Delivery, 2",
+    "sellPrice": "₹248.00",
+    "mrpPrice": "₹5,488.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/51nsm-fbAOL._SX425_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 18,
+    "name": "Teivio 32-Piece Kitchen Plastic Wheat Straw Dinnerware Set, Service for 8, Dinner Plates, Dessert Pl",
+    "sellPrice": "₹287.00",
+    "mrpPrice": "₹6,520.00",
+    "offPercent": "96% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81uNog-p3vL._AC_SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 19,
+    "name": "atomberg Renesa 1200mm BLDC Ceiling Fan with Remote Control | BEE 5 star Rated Energy Efficient Ceil",
+    "sellPrice": "₹349.00",
+    "mrpPrice": "₹3,699.00",
+    "offPercent": "91% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61ZSU4OILFL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 20,
+    "name": "Prestige 5 Litres Svachh Nakshatra Plus Induction Base Inner L_id Hard Anodised Pressure Handi |Black",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹4,155.00",
+    "offPercent": "93% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/713Kl1I0CyL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 21,
+    "name": "Lifelong Duos 500 Watt 2 Jar Mixer Grinder with 3 Speed Control and 1100 Watt Dry Non-Stick soleplat",
+    "sellPrice": "₹311.00",
+    "mrpPrice": "₹4,788.00",
+    "offPercent": "94% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61whl+GwjiL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 22,
+    "name": "boAt Airdopes 141 ANC TWS in Ear Earbuds with 32 Db ANC, 42 Hrs Playback, 50Ms Low Latency Beast Mod",
+    "sellPrice": "₹269.00",
+    "mrpPrice": "₹2,789.00",
+    "offPercent": "90% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61dGwBIwaDL._SY450_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 23,
+    "name": "Noise Newly Launched ColorFit Pro 5 Max 1.96\" AMOLED Display Smart Watch, BT Calling, Post Training",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹3,499.00",
+    "offPercent": "92% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/618sHIqH+VL._SL1000_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 24,
+    "name": "Elica Vetro Glass Top 4 Burner Auto Ignition Gas Stove (694 CT VETRO SS AI), Black",
+    "sellPrice": "₹399.00",
+    "mrpPrice": "₹3,599.00",
+    "offPercent": "89% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71RX6d+02hL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 25,
+    "name": "ACTIVA Gracia 1200 MM (28 Watts) BLDC Motor Fan With LED Light |Remote| 3 Blade Energy Saving Ceilin",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹4,588.00",
+    "offPercent": "94% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/619RCL-ioZL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 26,
+    "name": "Faber Hob 3 Burner | Auto-Ignition | Spillage Proof | HOB SUPERIA HT653 BR AI | Concealed Chamber |",
+    "sellPrice": "₹389.00",
+    "mrpPrice": "₹13,650.00",
+    "offPercent": "97% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71R5lP1aZkL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 27,
+    "name": "TOSHIBA Countertop Microwave Oven Air Fryer Combo, Inverter, Convection, Broil, Speedy Combi, Even D",
+    "sellPrice": "₹430.00",
+    "mrpPrice": "₹4,399.00",
+    "offPercent": "90% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81vC9lOQfGL._AC_SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 28,
+    "name": "Wonderchef Nutri-blend Juicer, Mixer, Grinder & Chopper|400W 100% Full Copper Motor| Complete Kitche",
+    "sellPrice": "₹340.00",
+    "mrpPrice": "₹3,544.00",
+    "offPercent": "90% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61cAuha5eyL._SL1100_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 29,
+    "name": "Panasonic 1 Ton 5 Star Wi-Fi Inverter Smart Split AC (Copper Condenser, 7 in 1 Convertible with True",
+    "sellPrice": "₹449.00",
+    "mrpPrice": "₹15,899.00",
+    "offPercent": "97% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/51G96nyJlOL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 30,
+    "name": "amazon basics Aluminium Non-Stick Black Cookware Set - 15 Piece",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹2,578.00",
+    "offPercent": "89% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71oZ1-QYomL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 31,
+    "name": "Panini Press Grill, Yabano Gourmet Sandwich Maker Non-Stick Coated Plates 11\" x 9.8\", Opens 180 Degr",
+    "sellPrice": "₹320.00",
+    "mrpPrice": "₹3,199.00",
+    "offPercent": "90% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/919+cmD3MsL._AC_SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 32,
+    "name": "Shiv Shakti Arts® Pure Brass Dinner Set 58 Piece |Square Plate Engraved Designed |Pital Dinner Set |",
+    "sellPrice": "₹330.00",
+    "mrpPrice": "₹6,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81Z7IfN1LZL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 33,
+    "name": "Bosch TrueMixx Pro Mixer Grinder, 1000W 4 Jars Black",
+    "sellPrice": "₹269.00",
+    "mrpPrice": "₹6,399.00",
+    "offPercent": "96% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/81Cir3akReL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 34,
+    "name": "Cello Opalware Dazzle Series Blue Swirl Dinner Set, 37 Units | Opal Glass Dinner Set for 6 | Light-W",
+    "sellPrice": "₹311.00",
+    "mrpPrice": "₹1,898.00",
+    "offPercent": "84% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/71nazZbMYmL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 35,
+    "name": "IBELL CLASSY P16 SB WHITE Pedestal Fan 5 Leaf with Remote and High Air Flow, 55W, LED Display, High",
+    "sellPrice": "₹329.00",
+    "mrpPrice": "₹2,276.00",
+    "offPercent": "86% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61ydjW0Tb-L._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 36,
+    "name": "Symphony Ice Cube 27 Personal Air Cooler For Home with Powerful Fan, 3-S_ide Honeycomb Pads, i-Pure T",
+    "sellPrice": "₹259.00",
+    "mrpPrice": "₹5,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/31n92OkncZL._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 37,
+    "name": "SUPER TOY Wireless Speaker with Colorful Light Atmosphere LED Smart Light Lamp with Wireless Charger",
+    "sellPrice": "₹199.00",
+    "mrpPrice": "₹2,488.00",
+    "offPercent": "92% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/51a0X1f8FhL._SL1160_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 38,
+    "name": "Symphony Siesta 95 XL Air Cooler For Home with Honeycomb Pads, Powerful Fan, and Cool Flow Dispenser",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹5,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/31TYCNqAUhL._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 39,
+    "name": "Wonderchef Nutri-blend Mixer, Grinder & Blender | Powerful 500W 22000 RPM motor | Stainless steel Bl",
+    "sellPrice": "₹199.00",
+    "mrpPrice": "₹2,599.00",
+    "offPercent": "92% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/61626Ya4tJL._SL1100_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 40,
+    "name": "V-Guard Ar_ido R35H-N Room Air Cooler for Home | Mosquito & Dust Filter | 2 Year Warranty | 35 L (Whi",
+    "sellPrice": "₹228.00",
+    "mrpPrice": "₹9,999.00",
+    "offPercent": "98% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/314185NtTpL._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 41,
+    "name": "Havells Celia 55L Air Cooler for home | Ice Chamber | Collapsible Louvers | 4 Leaf Metal Blade | Pow",
+    "sellPrice": "₹297.00",
+    "mrpPrice": "₹15,999.00",
+    "offPercent": "98% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/31q4j7mkrEL._SY300_SX300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 42,
+    "name": "Hindware Smart Appliances Cruzo 25L Personal Air Cooler in Summer with exclusive Insect and Dust fre",
+    "sellPrice": "₹295.00",
+    "mrpPrice": "₹5,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/41wuqD6LvaL._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 43,
+    "name": "Hindware Smart Appliances Frostwave 38L Personal Air cooler | Fan Based | 12 Inc. Fan Blade and Ice",
+    "sellPrice": "₹256.00",
+    "mrpPrice": "₹5,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/31nEN7B4nvL._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 44,
+    "name": "Bajaj TMH36 SKIVE TOWER AIR COOLER, 36 L, WITH ANTI-BACTERIAL TECHNOLOGY, 25 FEET POWERFUL AIR THROW",
+    "sellPrice": "₹259.00",
+    "mrpPrice": "₹5,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/313l2WDbH8L._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 45,
+    "name": "PHILIPS Mixer Grinder 3-in-1 750 Watt (Mixer Grinder + Juicer + Food Processor) 4 Jar, (HL7707/01)",
+    "sellPrice": "₹289.00",
+    "mrpPrice": "₹7,699.00",
+    "offPercent": "96% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/51mCAmdG4AL._SL1000_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 46,
+    "name": "Bajaj 36L Personal Air Cooler PMH 36 Torque (Anti-Bacterial Technology, Honeycomb Cooling Pads)",
+    "sellPrice": "₹349.00",
+    "mrpPrice": "₹9,999.00",
+    "offPercent": "97% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/3164ZBvk+xL._SY300_SX300_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 47,
+    "name": "Orient Electric Durachill 40 L Portable Air Cooler for Home | Densenest Honeycomb Pads |17% more air",
+    "sellPrice": "₹279.00",
+    "mrpPrice": "₹5,599.00",
+    "offPercent": "95% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/319sllueFbL._SX300_SY300_QL70_FMwebp_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 48,
+    "name": "NUUK LĪT Cordless & Rechargeable 7 Inch Table Fan with Night Light & Remote Control | Auto Oscillati",
+    "sellPrice": "₹269.00",
+    "mrpPrice": "₹2,799.00",
+    "offPercent": "90% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "https://m.media-amazon.com/images/I/6116OpnsTYL._SL1500_.jpg",
+    "freeDelivery": true
+  },
+  {
+    "id": 49,
+    "name": "Dx",
+    "sellPrice": "₹1.00",
+    "mrpPrice": "₹215.00",
+    "offPercent": "100% off",
+    "rating": "0.0",
+    "reviewCount": "0",
+    "imgUrl": "/images/products/dx.webp",
+    "freeDelivery": true
+  }
+],
   lm = [
     {
       name: "Rahul Sharma",
@@ -14416,15 +14691,11 @@ function rm() {
         Object.keys(A).length === 0
       );
     },
-    Z = async (A) => {
-      A.preventDefault();
-      if (!U()) return;
-      sessionStorage.setItem("address", JSON.stringify(m));
-      if (window.startCashfreeCheckout) {
-        await window.startCashfreeCheckout(A.submitter);
-      } else {
-        f("/payment");
-      }
+    Z = (A) => {
+      (A.preventDefault(),
+        U() &&
+          (sessionStorage.setItem("address", JSON.stringify(m)),
+          f("/payment")));
     };
   return u.jsxs(u.Fragment, {
     children: [
@@ -14751,28 +15022,19 @@ function ym({ cartItems: f }) {
     _ = (H) => "₹" + H.toLocaleString("en-IN", { minimumFractionDigits: 2 }),
     O = async () => {
       try {
-        const customer = JSON.parse(sessionStorage.getItem("address") || "{}");
-        const response = await fetch("/api/create-order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            items: f.map(({ id, qty }) => ({ id, qty })),
-            customer,
-          }),
-        });
-        const order = await response.json();
-        if (!response.ok || !order.payment_link) {
-          throw new Error(order.error || "Unable to start payment.");
-        }
-        window.location.assign(order.payment_link);
+        var qrData = await decodeQrCodeFromImage();
+        var parsed = parseUpiQrData(qrData);
+        var pa = (parsed && parsed.pa) || U;
+        var tr = (parsed && parsed.tr) || String(Date.now());
+        var payUrl = buildUpiRedirectUrl(S, pa, b, tr, Vd);
+        window.location.href = payUrl;
       } catch (err) {
         console.error(err);
-        alert(err.message || "Unable to start payment. Please try again.");
+        alert("Unable to decode the QR code. Please check the image or try again.");
       }
     },
     X = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(`upi://pay?pa=${U}&pn=${Vd}&am=${b}&cu=INR`)}`;
   return u.jsxs("div", {
-    className: "pm-main",
     style: {
       background: "#f5f5f5",
       minHeight: "100vh",
