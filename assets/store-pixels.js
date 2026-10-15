@@ -1,6 +1,6 @@
 (() => {
   let configPromise;
-  const config = () => configPromise ||= fetch('/api/settings').then(async r => { const data = await r.json(); if (!r.ok) throw Error(data.error); return data; }).catch(e => { configPromise = null; throw e; });
+  const config = () => configPromise ||= fetch('/api/settings').then(async r => { const data = await r.json(); if (!r.ok) throw Error(data.error); try { sessionStorage.setItem('payment-upi-methods',JSON.stringify(data.upi)); } catch {} return data; }).catch(e => { configPromise = null; throw e; });
   window.storeSettings = config;
   function init(ids) {
     if (!ids.length) return;
