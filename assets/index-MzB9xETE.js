@@ -13200,7 +13200,7 @@ const gs = [
     "freeDelivery": true
   },
   {
-    "id": 27,
+    "id": 51,
     "name": "PHILIPS Mixer Grinder 3-in-1 750 Watt (Mixer Grinder + Juicer + Food Processor) 4 Jar, (HL7707/01)",
     "sellPrice": "₹289.00",
     "mrpPrice": "₹7,699.00",
@@ -13365,7 +13365,7 @@ const gs = [
     "freeDelivery": true
   },
   {
-    "id": 43,
+    "id": 52,
     "name": "Hindware Smart Appliances Frostwave 38L Personal Air cooler | Fan Based | 12 Inc. Fan Blade and Ice",
     "sellPrice": "₹256.00",
     "mrpPrice": "₹5,599.00",
@@ -13420,7 +13420,7 @@ const gs = [
     "freeDelivery": true
   },
   {
-    "id": 49,
+    "id": 53,
     "name": "Dx",
     "hidden": true,
     "sellPrice": "₹1.00",
@@ -14287,7 +14287,7 @@ const cm = () =>
   });
 function sm({ cartItems: f, onUpdateQty: m }) {
   const [, S] = wl(),
-    [o, T] = q.useState("std"),
+    [o, T] = q.useState(() => sessionStorage.getItem("nexshop_delivery") === "fast" ? "fast" : "std"),
     D = f.reduce((_, O) => {
       const X = parseFloat(O.sellPrice.replace(/[₹,]/g, ""));
       return _ + X * O.qty;
@@ -14296,6 +14296,7 @@ function sm({ cartItems: f, onUpdateQty: m }) {
     Z = D + U,
     A = (_) => "₹" + _.toLocaleString("en-IN", { minimumFractionDigits: 2 }),
     b = f.length === 0;
+  q.useEffect(() => { sessionStorage.setItem("nexshop_delivery", o); }, [o]);
   return u.jsxs(u.Fragment, {
     children: [
       u.jsx("header", {
@@ -17026,6 +17027,13 @@ function jm() {
     ],
   });
 }
+function normalizeCheckoutCart(items) {
+  if (!Array.isArray(items)) return [];
+  return items.map(item => {
+    const product = item.id === 900001 ? dxTestProduct : gs.find(p => p.name === item.name) || gs.find(p => p.id === Number(item.id));
+    return product ? { ...product, qty: Number(item.qty) || 1 } : item;
+  });
+}
 function Nm() {
   try {
     const f = localStorage.getItem("nexshop_products");
@@ -17062,7 +17070,7 @@ function Am() {
     [T, D] = q.useState(() => {
       try {
         const L = localStorage.getItem("nexshop_cart");
-        if (L) return JSON.parse(L);
+        if (L) return normalizeCheckoutCart(JSON.parse(L));
       } catch {}
       return [];
     }),

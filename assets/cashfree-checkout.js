@@ -44,7 +44,7 @@
     card.innerHTML=`<header class="dp-header"><button class="dp-back" aria-label="Back to address">‹</button><a href="/" class="dp-brand">meesho</a><div class="dp-header-actions"><span aria-label="Wishlist">♥</span><a href="/cart" aria-label="View cart"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h5l4 17h15l4-12H9"/><circle cx="13" cy="27" r="1.5"/><circle cx="25" cy="27" r="1.5"/></svg><b id="dp-cart-count">0</b></a></div></header>
       <div class="dp-steps"><div class="complete"><i>✓</i>Cart</div><div class="complete"><i>✓</i>Address</div><div class="current"><i>3</i>Payment</div><div><i>4</i>Summary</div></div>
       <div class="dp-methods"><div class="dp-title"><h2>Select Payment Method</h2><span class="dp-safe"><img src="/assets/payment-icons/shield.svg" alt="">100% SAFE<br>PAYMENTS</span></div><div class="dp-divider">PAY ONLINE</div><div class="dp-upi-heading"><span class="dp-upi-tag">UPI</span> UPI(GPay/PhonePe/Paytm)</div><div id="payment-methods"></div></div>
-      <div class="dp-prices" id="price-details"><div>Total Product Price:<strong data-payment-amount>—</strong></div><div>Shipping:<strong class="dp-free">FREE</strong></div><div class="dp-total">Order Total:<strong data-payment-amount>—</strong></div></div>
+      <div class="dp-prices" id="price-details"><div>Total Product Price:<strong data-payment-amount>—</strong></div><div>Shipping:<strong class="dp-free" data-payment-shipping>FREE</strong></div><div class="dp-total">Order Total:<strong data-payment-amount>—</strong></div></div>
       <div class="dp-status"><p id="payment-status" role="status"></p><button id="retry-payment" hidden>Retry</button></div>
       <div class="dp-bottom"><div><strong data-payment-amount>—</strong><button class="dp-view">VIEW PRICE DETAILS</button></div><button class="dp-pay" disabled>PayNow</button></div>
       <dialog class="dp-dialog"><button class="dp-close" aria-label="Close">×</button><div id="payment-process" class="dp-process" data-state="waiting"><div class="dp-process-symbol"><span class="dp-process-ring"></span><span class="dp-process-center">↻</span></div><strong>Waiting for payment</strong><small>Complete the payment in your UPI app.</small><div class="dp-process-steps"><span>1 · Pay</span><span>2 · Verify</span><span>3 · Done</span></div></div><div id="payment-details"></div></dialog>`;
@@ -76,16 +76,21 @@
     initialPay.onclick=()=>{ card.querySelector('#payment-status').textContent='Securing your order. Please tap PayNow again in a moment.'; };
     try {
       const cart=JSON.parse(localStorage.getItem('nexshop_cart') || '[]');
+      const delivery=sessionStorage.getItem('nexshop_delivery') === 'fast' ? 'fast' : 'std';
+      const shipping=delivery === 'fast' ? 49 : 0;
+      const formatMoney=value=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR'}).format(value);
       const initialAmount=cart.reduce((sum,item)=>sum+Number(String(item.sellPrice || item.price || 0).replace(/[^0-9.]/g,''))*Number(item.qty||1),0);
-      if(Number.isFinite(initialAmount)) card.querySelectorAll('[data-payment-amount]').forEach(el=>el.textContent=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR'}).format(initialAmount));
+      if(Number.isFinite(initialAmount)) card.querySelectorAll('[data-payment-amount]').forEach(el=>el.textContent=formatMoney(el.closest('.dp-prices') && !el.closest('.dp-total') ? initialAmount : initialAmount+shipping));
+      card.querySelector('[data-payment-shipping]').textContent=shipping ? formatMoney(shipping) : 'FREE';
       const customer=JSON.parse(sessionStorage.getItem('address') || '{}');
       card.querySelector('#dp-cart-count').textContent=cart.reduce((n,i)=>n+Number(i.qty||1),0);
-      const order=await api('/api/create-order',{ items:cart.map(({id,qty})=>({id,qty})),customer });
+      const order=await api('/api/create-order',{ items:cart.map(({id,qty})=>({id,qty})),customer,delivery });
       if(current!==generation || !card.isConnected || location.pathname!=='/payment') return;
       active=order;
       sessionStorage.setItem(`payment:${order.orderId}`,JSON.stringify({orderId:order.orderId,token:order.token}));
       const money=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(order.amount);
-      card.querySelectorAll('[data-payment-amount]').forEach(el=>el.textContent=money);
+      card.querySelectorAll('[data-payment-amount]').forEach(el=>el.textContent=el.closest('.dp-prices') && !el.closest('.dp-total') ? formatMoney(order.subtotal ?? order.amount) : money);
+      card.querySelector('[data-payment-shipping]').textContent=order.shipping ? formatMoney(order.shipping) : 'FREE';
       const details=card.querySelector('#payment-details');
       const info=document.createElement('p'); info.className='dp-order-info'; info.textContent=`${money} · Order ID: ${order.orderId}`; details.appendChild(info);
       const receiver=document.createElement('p'); receiver.className='dp-receiver'; receiver.textContent=`UPI: ${order.upi.id}`; details.appendChild(receiver);

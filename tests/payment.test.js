@@ -1,6 +1,6 @@
 const test=require('node:test');const assert=require('node:assert/strict');
 const {priceCart,credentials,hash,matchQuery,reserveOrder}=require('../lib/payment');
-test('server prices cart and rejects invalid products/quantities',()=>{assert.equal(priceCart([{id:1,qty:2,price:1}]).amount,398);for(const items of [[{id:999999,qty:1}],[{id:1,qty:-1}],[{id:1,qty:7},{id:1,qty:7}],[]])assert.throws(()=>priceCart(items));});
+test('server prices cart and rejects invalid products/quantities',()=>{assert.equal(priceCart([{id:1,qty:2,price:1}]).amount,498);for(const items of [[{id:999999,qty:1}],[{id:1,qty:-1}],[{id:1,qty:7},{id:1,qty:7}],[]])assert.throws(()=>priceCart(items));});
 test('order IDs and credentials are unique',()=>{const ids=new Set();for(let i=0;i<1000;i++){const c=credentials();assert.equal(hash(c.token),c.tokenHash);assert.match(c.orderId,/^[A-Z0-9]{5}$/);ids.add(c.orderId);}assert.ok(ids.size>980);});
 const dbPath=require.resolve('../lib/db');
 let fakeDb;

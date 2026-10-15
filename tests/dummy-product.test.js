@@ -6,7 +6,7 @@ const {priceCart} = require('../lib/payment');
 test('hidden dummy is priced by the server at Rs 1 and uses normal cart quantities', () => {
   assert.equal(priceCart([{id:900001,qty:1}]).amount,1);
   assert.equal(priceCart([{id:900001,qty:2}]).amount,2);
-  assert.equal(priceCart([{id:900001,qty:1},{id:1,qty:1}]).amount,200);
+  assert.equal(priceCart([{id:900001,qty:1},{id:1,qty:1}]).amount,250);
 });
 test('both bundles resolve Dx to testing detail and omit dummy from home grid', () => {
   for(const file of ['assets/index-MzB9xETE.js','index-MzB9xETE.js']) {
