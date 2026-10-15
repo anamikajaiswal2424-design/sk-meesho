@@ -114,6 +114,6 @@
     "slug": "Dx",
     "name": "Payment Testing Product",
     "price": 1,
-    "hidden": true
+    "hidden": false
   }
 ]
