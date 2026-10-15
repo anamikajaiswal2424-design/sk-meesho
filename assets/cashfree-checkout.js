@@ -1,8 +1,15 @@
 (() => {
   let active, timer, checking = false, generation = 0, initialCheck;
   async function api(path, body) {
-    const r = await fetch(path,{ method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body) });
-    const data = await r.json(); if (!r.ok) throw Error(data.error || 'Please retry.'); return data;
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),15000);
+    try {
+      const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal});
+      const data=await r.json(); if(!r.ok) throw Error(data.error || 'Please retry.'); return data;
+    } catch(error) {
+      if(error.name==='AbortError') throw Error('Payment service is taking longer than usual. Please tap Retry.');
+      throw error;
+    } finally { clearTimeout(timeout); }
   }
   function processState(state) {
     const panel=document.getElementById('payment-process'); if(!panel) return;
@@ -62,7 +69,7 @@
       const note=document.createElement('p'); note.className='dp-payment-note'; note.textContent='Keep the Order ID in your payment note. Confirmation may take a moment.'; details.appendChild(note);
       const links=window.referencePaymentLinks(order);
       const uri=links.qr;
-      const img=document.createElement('img'); img.className='dp-qr'; img.alt='Scan to pay this order'; img.width=220; img.height=220; img.src=`https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(uri)}`; details.appendChild(img);
+      const img=document.createElement('img'); img.className='dp-qr'; img.alt='Scan to pay this order'; img.width=220; img.height=220; img.hidden=true; img.decoding='async'; details.appendChild(img);
       let selected='qr';
       const methods=card.querySelector('#payment-methods');
       for(const [flag,label,scheme,icon,iconClass] of [['Gpay','G Pay','tez://upi/pay','G','gpay'],['Phonepe','PhonePe','phonepe://pay','पे','phonepe'],['Paytm','Paytm','paytmmp://pay','paytm','paytm'],['Bhim','BHIM UPI','upi://pay','UPI','bhim'],['qr','Scan QR Code to Pay',null,'▦','qr']]) {
@@ -89,6 +96,7 @@
       payButton.onclick=()=>{
         const qr=selected==='qr' || selected==='Bhim';
         img.hidden=!qr;
+        if(qr && !img.getAttribute('src')) img.src=`https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(uri)}`;
         openApp.hidden=qr;
         if(!qr) { openApp.href=links[selected]; openApp.textContent=`Open ${selected==='Phonepe'?'PhonePe':selected==='Gpay'?'Google Pay':'Paytm'}`; }
         card.querySelector('dialog').showModal();
@@ -101,7 +109,7 @@
 
     } catch(e) { card.querySelector('#payment-status').textContent=e.message; card.querySelector('#retry-payment').hidden=false; }
   }
-  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=17'; document.head.appendChild(style);
+  if(!document.getElementById('payment-page-style')) { const style=document.createElement('link'); style.id='payment-page-style'; style.rel='stylesheet'; style.href='/assets/payment-design.css?v=18'; document.head.appendChild(style); }
   new MutationObserver(mount).observe(document.documentElement,{childList:true,subtree:true});
   addEventListener('focus',verify); mount();
 })();
