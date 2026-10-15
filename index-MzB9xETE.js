@@ -13673,53 +13673,37 @@ const gs = [
       }),
     }),
   am = (f) => (f >= 4 ? "#059669" : f === 3 ? "#d97706" : "#ef4444"),
-  nm = {
-    1: `Upgrade your daily nutrition with this value-packed dry fruits combo that includes Almonds, Cashews, Pistachios (Pista), and Kishmish (Raisins) — each in 1KG quantity.
-
-Carefully selected for premium quality, these dry fruits are rich in protein, healthy fats, and essential nutrients. Whether you're boosting your energy, preparing festive sweets, or looking for a healthy snack, this combo is the perfect choice.
-
-💥 Best for: Daily use, festivals, gifting, and bulk savings.
-
-🔥 Key Features:
-👉 Includes 4 Premium Dry Fruits – Almonds, Cashews, Pistachios & Raisins
-👉 1KG Each – Total 4KG Value Pack
-👉 Rich in Protein, Fiber & Healthy Nutrients
-👉 Fresh, Crunchy & Naturally Delicious
-👉 Perfect for Daily Snacking & Festive Gifting
-👉 Budget-Friendly Combo Offer`,
-    2: `Get the best of staple groceries in one power-packed combo! This Essential Grocery Mega Saver Combo includes Rice 5KG, Atta 10KG, Sugar 5KG & Soya Oil 5L — covering all your kitchen essentials.
-
-💥 Best for: Monthly grocery savings, family use, and bulk buying.
-
-🔥 Key Features:
-👉 Rice 5KG – Premium Basmati quality
-👉 Atta 10KG – Soft & healthy wheat flour
-👉 Sugar 5KG – Pure refined sugar
-👉 Soya Oil 5L – Heart-healthy cooking oil
-👉 Huge 97% Discount
-👉 Free Delivery`,
-    3: `This Daily Essentials Mega Saver Combo is your one-stop solution for all kitchen needs. Includes Atta 10KG, Basmati Rice 5KG, Sugar 5KG & Soya Oil 5L.
-
-💥 Best for: Daily cooking, family packs, and bulk grocery shopping.
-
-🔥 Key Features:
-👉 Atta 10KG – Premium quality wheat flour
-👉 Basmati Rice 5KG – Long grain aromatic rice
-👉 Sugar 5KG – Refined white sugar
-👉 Soya Oil 5L – Light & healthy cooking oil
-👉 Amazing 97% off deal
-👉 Free Delivery included`,
-  },
-  im = `This amazing combo gives you incredible value for money. Carefully sourced and quality-checked, every item in this pack is designed to meet your daily needs.
-
-💥 Best for: Daily use, family packs, and bulk savings.
-
-🔥 Key Features:
-👉 Premium quality products
-👉 Huge savings at ₹199 only
-👉 Free Delivery
-👉 97% discount on MRP
-👉 Trusted & verified seller`;
+  nm = {},
+  im = "Explore practical essentials for your home and kitchen.";
+function productDescription(product) {
+  const name=product.name || 'Home and kitchen essential';
+  const text=name.toLowerCase();
+  let overview='A practical addition to your home. Choose this product to suit your everyday routine and available space.';
+  let uses='Everyday home use and convenient household routines.';
+  let care='Follow the manufacturer instructions for installation, operation and care.';
+  if (/mixer|grinder|blender|juicer|chopper/.test(text)) {
+    overview='Make everyday kitchen preparation simpler. Use the appropriate jar or attachment for the ingredients and task, whether preparing chutneys, blending drinks or grinding ingredients.';
+    uses='Kitchen preparation, blending and grinding with the supported attachments.';
+    care='Use only the supplied attachments as directed. Unplug before cleaning and keep the motor base dry.';
+  } else if (/microwave|oven/.test(text)) {
+    overview='Bring convenience to everyday meal preparation. Use the cooking modes and settings supported by this model for your chosen dishes.';
+    uses='Meal preparation and reheating using the modes available on this model.';
+    care='Use cookware suitable for the selected mode and follow the manufacturer safety and cleaning instructions.';
+  } else if (/cookware|pressure|handi|hob|stove|sandwich|panini/.test(text)) {
+    overview='A useful addition to your kitchen for preparing everyday meals. Select the cooking method and utensils recommended for this product.';
+    uses='Everyday cooking and meal preparation.';
+    care='Check heat-source compatibility before use. Allow the product to cool before cleaning and follow the care instructions supplied.';
+  } else if (/dinner|casserole/.test(text)) {
+    overview='Make everyday serving and dining more convenient. This set is a practical choice for arranging meals at home.';
+    uses='Serving meals and organising your dining table.';
+    care='Check the supplied care instructions before dishwasher or microwave use. Wash with a gentle cleaner and store carefully.';
+  } else if (/kettle/.test(text)) {
+    overview='A convenient kitchen companion for heating water as directed by the manufacturer. Keep it within easy reach for your daily routine.';
+    uses='Heating water for everyday kitchen needs.';
+    care='Follow the fill markings, keep the electrical base dry and unplug before cleaning.';
+  }
+  return name+'\n\n'+overview+'\n\nIdeal for\n'+uses+'\n\nCare & use\n'+care+'\n\nPlease check the product title and images for the listed model and set contents. Refer to the manufacturer instructions for detailed specifications.';
+}
 const dxTestProduct = Object.freeze({
   id: 900001, slug: "Dx", hidden: true,
   name: "Payment Testing Product",
@@ -13761,7 +13745,7 @@ function um({
       ],
     });
   const X = m.reduce((Y, De) => Y + De.qty, 0),
-    H = O.id === 900001 ? "Payment testing product — ₹1. For payment flow testing only." : nm[O.id] ?? im,
+    H = O.id === 900001 ? "Payment testing product — ₹1. For payment flow testing only." : productDescription(O),
     L = (Y) => {
       (_(Y), setTimeout(() => _(""), 2e3));
     },
