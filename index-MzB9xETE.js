@@ -12695,8 +12695,8 @@ function P1() {
           className: "full-width-img",
         }),
         u.jsx("img", {
-          src: "https://cdn.shopify.com/s/files/1/0786/1610/1096/files/1.webp?v=1774803568",
-          alt: "Maha Sale",
+          src: "/assets/mega-blockbuster-banner.jpg?v=1",
+          alt: "Mega Blockbuster Sale",
           className: "full-width-img",
         }),
         u.jsxs("div", {
