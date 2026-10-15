@@ -4,18 +4,26 @@
     const r = await fetch(path,{ method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body) });
     const data = await r.json(); if (!r.ok) throw Error(data.error || 'Please retry.'); return data;
   }
+  function processState(state) {
+    const panel=document.getElementById('payment-process'); if(!panel) return;
+    panel.dataset.state=state;
+    const labels={waiting:['Waiting for payment','Complete the payment in your UPI app.'],checking:['Checking your payment','Looking for your payment confirmation…'],pending:['Awaiting confirmation','We will check automatically. Please do not pay again.'],success:['Payment confirmed','Your receipt is verified. Opening Payment Done…'],error:['Unable to check right now','You can retry the status check below.'],timeout:['Confirmation is taking longer','Check again in a moment. Please do not pay again.']};
+    panel.querySelector('strong').textContent=labels[state][0]; panel.querySelector('small').textContent=labels[state][1];
+    const check=document.getElementById('manual-payment-check'); if(check){check.disabled=state==='checking'||state==='success';check.textContent=state==='checking'?'Checking…':'Check Payment Status';}
+  }
   async function verify() {
     if (!active || checking || location.pathname !== '/payment') return;
-    checking = true;
+    checking = true; processState('checking');
     try {
       const result = await api('/api/verify',{ orderId:active.orderId,token:active.token });
       const status = document.getElementById('payment-status');
       const modalStatus=document.getElementById('modal-payment-status');
       if (result.verified) {
         clearInterval(timer);
-        location.assign(`/success.html?order_id=${encodeURIComponent(active.orderId)}`);
-      } else { if (status) status.textContent = result.message; if(modalStatus) modalStatus.textContent=result.message; }
-    } catch(e) { const status = document.getElementById('payment-status');
+        processState('success'); const confirmedId=active.orderId;
+        setTimeout(()=>location.assign(`/success.html?order_id=${encodeURIComponent(confirmedId)}`),900);
+      } else { processState('pending'); if (status) status.textContent = result.message; if(modalStatus) modalStatus.textContent=result.message; }
+    } catch(e) { processState('error'); const status = document.getElementById('payment-status');
       const modalStatus=document.getElementById('modal-payment-status'); if(status) status.textContent=e.message; if(modalStatus) modalStatus.textContent=e.message; }
     finally { checking=false; }
   }
@@ -26,13 +34,13 @@
     page.dataset.upiReady='true';
     const current = ++generation;
     const card = document.createElement('section'); card.className='database-payment';
-    card.innerHTML=`<header class="dp-header"><button class="dp-back" aria-label="Back to address">‹</button><span>PAYMENT</span></header>
+    card.innerHTML=`<header class="dp-header"><button class="dp-back" aria-label="Back to address">‹</button><a href="/" class="dp-brand">meesho</a><div class="dp-header-actions"><span aria-label="Wishlist">♥</span><a href="/cart" aria-label="View cart"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h5l4 17h15l4-12H9"/><circle cx="13" cy="27" r="1.5"/><circle cx="25" cy="27" r="1.5"/></svg><b id="dp-cart-count">0</b></a></div></header>
       <div class="dp-steps"><div class="complete"><i>✓</i>Cart</div><div class="complete"><i>✓</i>Address</div><div class="current"><i>3</i>Payment</div><div><i>4</i>Summary</div></div>
-      <div class="dp-methods"><div class="dp-title"><h2>Select Payment Method</h2><span class="dp-safe"><img src="/assets/payment-icons/shield.svg" alt="">SECURE<br>PAYMENT</span></div><div class="dp-offer"><div><span class="dp-eyebrow">QUICK &amp; CONVENIENT</span><strong>Pay your way.</strong><p>Choose your favourite UPI app or scan a QR.</p></div><img src="/assets/payment-icons/upi.svg" alt="UPI"></div><div class="dp-divider">PAY ONLINE</div><div class="dp-upi-heading">Choose a payment method<span class="dp-chevron">UPI</span></div><div id="payment-methods"></div></div>
-      <div class="dp-prices" id="price-details"><div>Shipping:<strong>FREE</strong></div><div>Total Products Price:<strong data-payment-amount>—</strong></div><div class="dp-total">Order Total:<strong data-payment-amount>—</strong></div></div>
+      <div class="dp-methods"><div class="dp-title"><h2>Select Payment Method</h2><span class="dp-safe"><img src="/assets/payment-icons/shield.svg" alt="">100% SAFE<br>PAYMENTS</span></div><div class="dp-divider">PAY ONLINE</div><div class="dp-upi-heading"><span class="dp-upi-tag">UPI</span> UPI(GPay/PhonePe/Paytm)</div><div id="payment-methods"></div></div>
+      <div class="dp-prices" id="price-details"><div>Total Product Price:<strong data-payment-amount>—</strong></div><div>Shipping:<strong class="dp-free">FREE</strong></div><div class="dp-total">Order Total:<strong data-payment-amount>—</strong></div></div>
       <div class="dp-status"><p id="payment-status" role="status">Preparing your payment…</p><button id="retry-payment" hidden>Retry</button></div>
       <div class="dp-bottom"><div><strong data-payment-amount>—</strong><button class="dp-view">VIEW PRICE DETAILS</button></div><button class="dp-pay" disabled>PayNow</button></div>
-      <dialog class="dp-dialog"><button class="dp-close" aria-label="Close">×</button><h3>Complete your payment</h3><div id="payment-details"></div></dialog>`;
+      <dialog class="dp-dialog"><button class="dp-close" aria-label="Close">×</button><div id="payment-process" class="dp-process" data-state="waiting"><div class="dp-process-symbol"><span class="dp-process-ring"></span><span class="dp-process-center">↻</span></div><strong>Waiting for payment</strong><small>Complete the payment in your UPI app.</small><div class="dp-process-steps"><span>1 · Pay</span><span>2 · Verify</span><span>3 · Done</span></div></div><div id="payment-details"></div></dialog>`;
     card.querySelector('.dp-back').onclick=()=>location.assign('/checkout');
     card.querySelector('.dp-view').onclick=()=>card.querySelector('#price-details').scrollIntoView({behavior:'smooth',block:'center'});
     card.querySelector('.dp-close').onclick=()=>card.querySelector('dialog').close();
@@ -41,6 +49,7 @@
     try {
       const cart=JSON.parse(localStorage.getItem('nexshop_cart') || '[]');
       const customer=JSON.parse(sessionStorage.getItem('address') || '{}');
+      card.querySelector('#dp-cart-count').textContent=cart.reduce((n,i)=>n+Number(i.qty||1),0);
       const order=await api('/api/create-order',{ items:cart.map(({id,qty})=>({id,qty})),customer });
       if(current!==generation || !card.isConnected || location.pathname!=='/payment') return;
       active=order;
@@ -48,15 +57,15 @@
       const money=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(order.amount);
       card.querySelectorAll('[data-payment-amount]').forEach(el=>el.textContent=money);
       const details=card.querySelector('#payment-details');
-      const info=document.createElement('p'); info.textContent=`Amount: ${money} | Order ID: ${order.orderId}`; details.appendChild(info);
-      const receiver=document.createElement('p'); receiver.textContent=`UPI: ${order.upi.id}`; details.appendChild(receiver);
-      const note=document.createElement('p'); note.textContent='Keep this Order ID in the payment note/comment. Payment is confirmed after verification.'; details.appendChild(note);
+      const info=document.createElement('p'); info.className='dp-order-info'; info.textContent=`${money} · Order ID: ${order.orderId}`; details.appendChild(info);
+      const receiver=document.createElement('p'); receiver.className='dp-receiver'; receiver.textContent=`UPI: ${order.upi.id}`; details.appendChild(receiver);
+      const note=document.createElement('p'); note.className='dp-payment-note'; note.textContent='Keep the Order ID in your payment note. Confirmation may take a moment.'; details.appendChild(note);
       const links=window.referencePaymentLinks(order);
       const uri=links.qr;
       const img=document.createElement('img'); img.className='dp-qr'; img.alt='Scan to pay this order'; img.width=220; img.height=220; img.src=`https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(uri)}`; details.appendChild(img);
       let selected='qr';
       const methods=card.querySelector('#payment-methods');
-      for(const [flag,label,scheme,icon,iconClass] of [['Phonepe','PhonePe','phonepe://pay','पे','phonepe'],['Gpay','Google Pay','tez://upi/pay','G','gpay'],['Paytm','Paytm','paytmmp://pay','paytm','paytm'],['Bhim','BHIM / Any UPI','upi://pay','UPI','bhim'],['qr','Pay Using QR Code',null,'▦','qr']]) {
+      for(const [flag,label,scheme,icon,iconClass] of [['Gpay','G Pay','tez://upi/pay','G','gpay'],['Phonepe','PhonePe','phonepe://pay','पे','phonepe'],['Paytm','Paytm','paytmmp://pay','paytm','paytm'],['Bhim','BHIM UPI','upi://pay','UPI','bhim'],['qr','Scan QR Code to Pay',null,'▦','qr']]) {
         if(flag!=='qr' && !order.upi[flag]) continue;
         const row=document.createElement('label'); row.className='dp-method';
         const radio=document.createElement('input'); radio.type='radio'; radio.name='payment-method'; radio.value=flag;
@@ -64,7 +73,7 @@
         radio.onchange=()=>selected=flag;
         const title=document.createElement('span'); title.className='dp-method-copy'; const name=document.createElement('strong'); name.textContent=label; const subtitle=document.createElement('small'); subtitle.textContent=flag==='qr'?'Scan with any UPI app':flag==='Bhim'?'Pay using any UPI app':'Fast payment with your UPI account'; title.append(name,subtitle);
         const badge=document.createElement('span'); badge.className='dp-icon'; const logo=document.createElement('img'); logo.src=`/assets/payment-icons/${iconClass==='bhim'?'upi':iconClass}.svg`; logo.alt=label; badge.appendChild(logo);
-        row.append(radio,badge,title); methods.appendChild(row);
+        if(flag==='qr') row.classList.add('dp-scan-row'); row.append(radio,title,badge); methods.appendChild(row);
 
       }
       const payButton=card.querySelector('.dp-pay'); payButton.disabled=false;
@@ -72,10 +81,10 @@
       const modalStatus=document.createElement('p'); modalStatus.id='modal-payment-status'; modalStatus.setAttribute('role','status'); details.appendChild(modalStatus);
       function startVerification() {
         clearInterval(timer); clearTimeout(initialCheck);
-        modalStatus.textContent='Checking payment…';
+        modalStatus.textContent=''; processState('waiting');
         let attempts=0;
         initialCheck=setTimeout(verify,3000);
-        timer=setInterval(()=>{ if(++attempts>120) { clearInterval(timer); modalStatus.textContent='Receipt is still pending. Check status again; do not pay twice.'; return; } verify(); },5000);
+        timer=setInterval(()=>{ if(++attempts>120) { clearInterval(timer); processState('timeout'); modalStatus.textContent='Receipt is still pending. Check status again; do not pay twice.'; return; } verify(); },5000);
       }
       payButton.onclick=()=>{
         const qr=selected==='qr' || selected==='Bhim';
@@ -86,13 +95,13 @@
         startVerification();
         if(!qr) location.assign(links[selected]);
       };
-      const copy=document.createElement('button'); copy.textContent='Copy Order ID'; copy.onclick=async()=>{ try { await navigator.clipboard.writeText(order.orderId); copy.textContent='Copied'; } catch { copy.textContent='Copy the Order ID shown above'; } }; details.appendChild(copy);
-      const check=document.createElement('button'); check.textContent='Check Payment Status'; check.onclick=startVerification; details.appendChild(check);
+      const copy=document.createElement('button'); copy.className='dp-copy-order'; copy.textContent='Copy Order ID'; copy.onclick=async()=>{ try { await navigator.clipboard.writeText(order.orderId); copy.textContent='Copied'; } catch { copy.textContent='Copy the Order ID shown above'; } }; details.appendChild(copy);
+      const check=document.createElement('button'); check.id='manual-payment-check'; check.textContent='Check Payment Status'; check.onclick=startVerification; details.appendChild(check);
       card.querySelector('#payment-status').textContent='';
 
     } catch(e) { card.querySelector('#payment-status').textContent=e.message; card.querySelector('#retry-payment').hidden=false; }
   }
-  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=12'; document.head.appendChild(style);
+  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=15'; document.head.appendChild(style);
   new MutationObserver(mount).observe(document.documentElement,{childList:true,subtree:true});
   addEventListener('focus',verify); mount();
 })();
