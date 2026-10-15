@@ -15035,6 +15035,7 @@ function ym({ cartItems: f }) {
     },
     X = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(`upi://pay?pa=${U}&pn=${Vd}&am=${b}&cu=INR`)}`;
   return u.jsxs("div", {
+    className: "pm-main",
     style: {
       background: "#f5f5f5",
       minHeight: "100vh",
