@@ -12884,7 +12884,7 @@ function tm({ products: f, onAddToCart: m }) {
           }),
           u.jsx("div", {
             className: "product-list",
-            children: f.filter((o) => !o.hidden && o.id !== 900001).map((o) =>
+            children: f.filter((o) => !o.hidden && String(o.id) !== "900001" && String(o.slug || "").toLowerCase() !== "dx" && !["dx", "payment testing product"].includes(String(o.name || "").trim().toLowerCase())).map((o) =>
               u.jsx(
                 em,
                 {
@@ -13433,6 +13433,7 @@ const gs = [
   {
     "id": 49,
     "name": "Dx",
+    "hidden": true,
     "sellPrice": "₹1.00",
     "mrpPrice": "₹215.00",
     "offPercent": "100% off",

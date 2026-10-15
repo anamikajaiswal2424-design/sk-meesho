@@ -21,7 +21,7 @@ test('both bundles resolve Dx to testing detail and omit dummy from home grid', 
     }
     const startGrid=source.indexOf('function tm('),endGrid=source.indexOf('const gs =',startGrid);
     const expression=source.slice(startGrid,endGrid).match(/f\.filter\([^\n]+\)\.map/)[0].replace(/\.map$/,'');
-    const visible=vm.runInNewContext(expression,{f:[{id:1},product,{id:900001},{id:2,hidden:true}]});
+    const visible=vm.runInNewContext(expression,{f:[{id:1},product,{id:900001},{id:"900001",hidden:false},{id:49,name:"Dx"},{id:52,slug:"Dx",hidden:false},{id:53,name:"Payment Testing Product",hidden:false},{id:2,hidden:true}]});
     assert.equal(visible.length,1);assert.equal(visible[0].id,1);
   }
 });
