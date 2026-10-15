@@ -101,7 +101,7 @@
 
     } catch(e) { card.querySelector('#payment-status').textContent=e.message; card.querySelector('#retry-payment').hidden=false; }
   }
-  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=15'; document.head.appendChild(style);
+  const style=document.createElement('link'); style.rel='stylesheet'; style.href='/assets/payment-design.css?v=16'; document.head.appendChild(style);
   new MutationObserver(mount).observe(document.documentElement,{childList:true,subtree:true});
   addEventListener('focus',verify); mount();
 })();
